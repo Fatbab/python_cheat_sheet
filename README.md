@@ -5,7 +5,9 @@ updates df1 with all columns in df2.
 new column's are set to NaN.     
 
 - [ ] Graph two columns of dataframe by say, "date" column on x-axis:     
+
 `import matplotlib.pyplot as plt`      
+
 `fig = plt.gcf()`      
 `fig.set_size_inches(50, 20, forward=True)`      
 `x_pos = np.arrange(len(df["date"].unique())`      
