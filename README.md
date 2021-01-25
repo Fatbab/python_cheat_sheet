@@ -8,9 +8,9 @@ new column's are set to NaN.
 
 `import matplotlib.pyplot as plt`      
 
-`fig = plt.gcf()`      
-`fig.set_size_inches(50, 20, forward=True)`      
-`x_pos = np.arrange(len(df["date"].unique())`      
+```fig = plt.gcf()      
+fig.set_size_inches(50, 20, forward=True)`      
+x_pos = np.arrange(len(df["date"].unique())```      
 
 `plt.plot(x_pos, df["col1"], lable =f"{col1} in data", color = "blue", linewidth = 3)`      
 `plt.plot(x_pos, df["col2"], lable =f"{col2} in data", color = "orange", linewidth = 3)`      
