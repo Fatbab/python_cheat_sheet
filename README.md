@@ -42,7 +42,7 @@ df = df.drop(columns = ["order1", "order2"])
 In a patterened string, ordering by specific substring.       
 In this example, sorting by email domain vs id names.
 ```
-df:: 
+df 
     name             email
 0   Carl    carl@yahoo.com
 1    Bob     bob@gmail.com
@@ -52,4 +52,12 @@ df::
 
 df = df.set_index('email')
 df.reindex(sorted(df.index, key=lambda x: x.split('@')[::-1])).reset_index()
+
+df
+              email   name
+0     bob@gmail.com    Bob
+1     eve@gmail.com    Eve
+2  dave@hotmail.com  David
+3   alice@yahoo.com  Alice
+4    carl@yahoo.com   Carl
 ```
