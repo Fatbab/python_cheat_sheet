@@ -34,7 +34,22 @@ plt.close()
 In a CamleCasedString, looking to split by uppercase words first and order in reverse order: 
 ```
 df["order1"] = df["CamleCasedColumn"].apply(lambda x: re.findall("[A-Z][^A-Z]*", x)[::-1][0])
-df["order2"] = df["CamleCasedColumn"].apply(lambda x: re.findall("[A-Z][^A-Z]*", x)[::-1][0])
+df["order2"] = df["CamleCasedColumn"].apply(lambda x: re.findall("[A-Z][^A-Z]*", x)[::-1][1])
 df.sort_values(by=["order1", "order2"], inplace=True)
 df = df.drop(columns = ["order1", "order2"])
+```
+
+In a patterened string, ordering by specific substring.       
+In this example, sorting by email domain vs id names.
+```
+df:: 
+    name             email
+0   Carl    carl@yahoo.com
+1    Bob     bob@gmail.com
+2  Alice   alice@yahoo.com
+3  David  dave@hotmail.com
+4    Eve     eve@gmail.com
+
+df = df.set_index('email')
+df.reindex(sorted(df.index, key=lambda x: x.split('@')[::-1])).reset_index()
 ```
