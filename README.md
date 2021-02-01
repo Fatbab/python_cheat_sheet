@@ -32,4 +32,9 @@ plt.close()
 ```
 ## Sort Column Value by SubString
 In a CamleCasedString, looking to split by uppercase words first and order in reverse order: 
-``
+```
+df["order1"] = df["CamleCasedColumn"].apply(lambda x: re.findall("[A-Z][^A-Z]*", x)[::-1][0])
+df["order2"] = df["CamleCasedColumn"].apply(lambda x: re.findall("[A-Z][^A-Z]*", x)[::-1][0])
+df.sort_values(by=["order1", "order2"], inplace=True)
+df = df.drop(columns = ["order1", "order2"])
+```
