@@ -61,3 +61,9 @@ df
 3   alice@yahoo.com  Alice
 4    carl@yahoo.com   Carl
 ```
+
+
+## Find all rows with NA in any columns 
+```
+df[pd.isnull(df).any(axis=1)]
+```
