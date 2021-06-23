@@ -67,3 +67,19 @@ df
 ```
 df[pd.isnull(df).any(axis=1)]
 ```
+
+
+## Find all non NAN  
+```
+df[df.notnull().all(1)]
+```
+
+
+## convert all values in a column to upper case and compare: 
+```
+list(
+         map(
+                  str.upper, df[df["col_1"].isin(my_list) & (df["col2]=="my_string")]["col1"]
+            )
+    )
+```
