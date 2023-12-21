@@ -23,7 +23,7 @@ plt.xticks(xtick_range, df["time"].unique()[xtick_range], rotation = 90)
 plt.gca().yaxis.offsetText.set_fontsize(50)
 plt.tick_params(labelsize=50)
 
-plt.legend(loc="upper left")
+plt.legend(loc="upper left", prop={"size": 20})
 plt.title(f"sample graph based on {col1} and {col2} of data", fontdict={"fontsize": 50})
 
 plt.grid(True)
